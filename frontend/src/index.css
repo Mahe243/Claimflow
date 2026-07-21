@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color system: "clinical trust" — cool paper, deep teal-green primary,
+     amber for pending states, restrained. Not the AI-cliche cream/terracotta. */
+  --color-ink: #10241F;
+  --color-paper: #F5F8F7;
+  --color-surface: #FFFFFF;
+  --color-line: #E1E9E6;
+
+  --color-primary: #0B6E4F;
+  --color-primary-dark: #084E38;
+  --color-primary-light: #E4F2EC;
+
+  --color-amber: #C9822A;
+  --color-amber-light: #FBF0DF;
+
+  --color-success: #1F9D6C;
+  --color-success-light: #E4F5ED;
+
+  --color-danger: #C24A3E;
+  --color-danger-light: #FBEAE7;
+
+  --color-muted: #5B6B67;
+  --color-muted-light: #8A9894;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
